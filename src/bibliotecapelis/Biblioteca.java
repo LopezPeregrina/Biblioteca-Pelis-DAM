@@ -25,4 +25,13 @@ public class Biblioteca {
             }
         }
     }
+    
+    public boolean buscarPelicula(String titulo) {
+        for (Pelicula pelicula : peliculas) {
+            if (pelicula != null && pelicula.getTitulo().equalsIgnoreCase(titulo)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

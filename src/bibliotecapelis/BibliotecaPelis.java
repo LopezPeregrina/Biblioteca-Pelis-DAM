@@ -1,5 +1,7 @@
 package bibliotecapelis;
 
+import java.util.Scanner;
+
 public class BibliotecaPelis {
 
     public static void main(String[] args) {
@@ -16,6 +18,17 @@ public class BibliotecaPelis {
         biblioteca.agregarPelicula(peli4, 3);
         
         biblioteca.mostrarPeliculas();
+        
+        Scanner scanner = new Scanner(System.in);
+
+System.out.print("Introduzca el título: ");
+        String busqueda = scanner.nextLine();
+        boolean disponible = biblioteca.buscarPelicula(busqueda);
+        if (disponible) {
+            System.out.println("La película " + busqueda + " está presente en la biblioteca.");
+        } else {
+            System.out.println("La película " + busqueda + " NO está presente en la biblioteca.");
+        }
     }
     
 }
