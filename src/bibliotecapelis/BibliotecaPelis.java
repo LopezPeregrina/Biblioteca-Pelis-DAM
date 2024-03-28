@@ -1,20 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package bibliotecapelis;
 
-/**
- *
- * @author Antonio
- */
 public class BibliotecaPelis {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Biblioteca biblioteca = new Biblioteca(4);
+        
+        Pelicula peli1 = new Pelicula("La cosa", "John Carpenter", 105, 1982);
+        Pelicula peli2 = new Pelicula("Psicosis", "Alfred Hitchcock", 109, 1960);
+        Pelicula peli3 = new Pelicula("Hereditary", "Ari Aster", 126, 2018);
+        Pelicula peli4 = new Pelicula("Amanecer de los muertos", "Zack Snyder", 100, 2004);
+        
+        biblioteca.agregarPelicula(peli1, 0);
+        biblioteca.agregarPelicula(peli2, 1);
+        biblioteca.agregarPelicula(peli3, 2);
+        biblioteca.agregarPelicula(peli4, 3);
+        
+        biblioteca.mostrarPeliculas();
     }
     
 }
