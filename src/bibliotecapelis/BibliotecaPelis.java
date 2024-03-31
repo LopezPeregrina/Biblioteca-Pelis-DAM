@@ -5,12 +5,31 @@ import java.util.Scanner;
 public class BibliotecaPelis {
 
     public static void main(String[] args) {
-        Biblioteca biblioteca = new Biblioteca(4);
+        Biblioteca biblioteca = new Biblioteca(4);  
         
-        Pelicula peli1 = new Pelicula("La cosa", "John Carpenter", 105, 1982);
-        Pelicula peli2 = new Pelicula("Psicosis", "Alfred Hitchcock", 109, 1960);
-        Pelicula peli3 = new Pelicula("Hereditary", "Ari Aster", 126, 2018);
-        Pelicula peli4 = new Pelicula("Amanecer de los muertos", "Zack Snyder", 100, 2004);
+        Pelicula peli1 = new Pelicula.Builder("Psicosis")
+                .director("Alfred Hitchcock")
+                .duracion(109)
+                .anio(1960)
+                .build();
+        
+                Pelicula peli2 = new Pelicula.Builder("La cosa")
+                .director("John Carpenter")
+                .duracion(105)
+                .anio(1982)
+                .build();
+        
+        Pelicula peli3 = new Pelicula.Builder("Amanecer de los muertos")
+                .director("Zack Snyder")
+                .duracion(100)
+                .anio(2004)
+                .build();
+        
+        Pelicula peli4 = new Pelicula.Builder("Hereditary")
+                .director("Ari Aster")
+                .duracion(126)
+                .anio(1018)
+                .build();
         
         biblioteca.agregarPelicula(peli1, 0);
         biblioteca.agregarPelicula(peli2, 1);

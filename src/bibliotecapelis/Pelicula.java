@@ -6,43 +6,46 @@ public class Pelicula {
     private int duracion;
     private int anio;
 
-    public Pelicula(String titulo, String director, int duracion, int anio) {
+    private Pelicula(String titulo) {
         this.titulo = titulo;
-        this.director = director;
-        this.duracion = duracion;
-        this.anio = anio;
     }
 
     public String getTitulo() {
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public int getDuracion() {
-        return duracion;
-    }
-
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
-    }
-
-    public int getAnio() {
-        return anio;
-    }
-
-    public void setAnio(int anio) {
-        this.anio = anio;
+    public static class Builder {
+        private String titulo;
+        private String director = "";
+        private int duracion = 0;
+        private int anio = 0;
+        
+        public Builder(String titulo) {
+            this.titulo = titulo;
+        }
+        
+        public Builder director(String director) {
+            this.director = director;
+            return this;
+        }
+        
+        public Builder duracion(int duracion) {
+            this.duracion = duracion;
+            return this;
+        }
+        
+        public Builder anio(int anio) {
+            this.anio = anio;
+            return this;
+        }
+        
+        public Pelicula build() {
+            Pelicula pelicula = new Pelicula(titulo);
+            pelicula.director = this.director;
+            pelicula.duracion = this.duracion;
+            pelicula.anio = this.anio;
+            return pelicula;
+        }
     }
 
     public void mostrarPelicula() {
