@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class BibliotecaPelis {
 
     public static void main(String[] args) {
-        Biblioteca biblioteca = new Biblioteca(5);  
+        Biblioteca biblioteca = Biblioteca.getInstance(5);
         
         Pelicula peli1 = new Pelicula.Builder("Psicosis")
                 .director("Alfred Hitchcock")

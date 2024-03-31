@@ -2,10 +2,18 @@ package bibliotecapelis;
 
 public class Biblioteca {
     
+    private static Biblioteca instance;
     private Pelicula[] peliculas;
 
-    public Biblioteca(int tamanio) {
+    private Biblioteca(int tamanio) {
         peliculas = new Pelicula[tamanio];
+    }
+    
+    public static Biblioteca getInstance(int tamanio) {
+        if (instance == null) {
+            instance = new Biblioteca(tamanio);
+        }
+        return instance;
     }
 
     public void agregarPelicula(Pelicula pelicula, int indice) {
