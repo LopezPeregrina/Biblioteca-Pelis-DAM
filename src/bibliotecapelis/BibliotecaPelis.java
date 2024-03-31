@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class BibliotecaPelis {
 
     public static void main(String[] args) {
-        Biblioteca biblioteca = new Biblioteca(4);  
+        Biblioteca biblioteca = new Biblioteca(5);  
         
         Pelicula peli1 = new Pelicula.Builder("Psicosis")
                 .director("Alfred Hitchcock")
@@ -28,13 +28,17 @@ public class BibliotecaPelis {
         Pelicula peli4 = new Pelicula.Builder("Hereditary")
                 .director("Ari Aster")
                 .duracion(126)
-                .anio(1018)
+                .anio(2018)
+                .build();
+        
+        Pelicula peli5 = new Pelicula.Builder("Late night with the Devil")
                 .build();
         
         biblioteca.agregarPelicula(peli1, 0);
         biblioteca.agregarPelicula(peli2, 1);
         biblioteca.agregarPelicula(peli3, 2);
         biblioteca.agregarPelicula(peli4, 3);
+        biblioteca.agregarPelicula(peli5, 4);
         
         biblioteca.mostrarPeliculas();
         
